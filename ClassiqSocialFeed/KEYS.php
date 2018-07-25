@@ -20,7 +20,7 @@ class KEYS
      * @param string $apiId
      * @param string $apiSecret
      */
-    public function setFacebookKeys($apiId,$apiSecret){
+    public static function setFacebookKeys($apiId,$apiSecret){
         self::$FB_API_ID=$apiId;
         self::$FB_API_SECRET=$apiSecret;
         self::$FB_API_TOKEN=$apiId."|".$apiSecret;

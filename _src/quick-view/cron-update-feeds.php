@@ -9,6 +9,9 @@ use Classiq\Models\SocialFeed;
 $feeds=db()->find("socialfeed","ORDER BY date_modified ASC"); //les plus vieux en premier
 foreach ($feeds as $feed){
     if(the()->boot->getTime()<2000){
-        $feed->updateFromSocialApi();
+        $r=$feed->updateFromSocialApi();
+        foreach ($r->errors as $err){
+            echo $err."<br>";
+        }
     }
 }
