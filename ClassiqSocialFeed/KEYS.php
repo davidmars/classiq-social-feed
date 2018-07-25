@@ -2,14 +2,28 @@
 
 namespace ClassiqSocialFeed;
 
-
+/**
+ * Class KEYS contient les identifiants de connexion
+ * @package ClassiqSocialFeed
+ */
 class KEYS
 {
     /**
      * Token d'acces de l'application Facebook
      */
-    const FB_API_TOKEN="571003389771683|5414364c0471844e9cd0a2c68afb9504";
-    const FB_API_SECRET="5414364c0471844e9cd0a2c68afb9504";
-    const FB_API_ID="571003389771683";
+    public static $FB_API_TOKEN="xxx|yyy";
+    public static $FB_API_SECRET="yyy";
+    public static $FB_API_ID="xxx";
+
+    /**
+     * Définit les clés et le token à partir de là
+     * @param string $apiId
+     * @param string $apiSecret
+     */
+    public function setFacebookKeys($apiId,$apiSecret){
+        self::$FB_API_ID=$apiId;
+        self::$FB_API_SECRET=$apiSecret;
+        self::$FB_API_TOKEN=$apiId."|".$apiSecret;
+    }
 
 }
