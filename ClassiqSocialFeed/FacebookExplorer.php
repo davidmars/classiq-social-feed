@@ -36,10 +36,10 @@ class FacebookExplorer
     private static function fb(){
         if(!self::$_fb){
             self::$_fb = new Facebook([
-                'app_id' => KEYS::FB_API_ID,
-                'app_secret' => KEYS::FB_API_SECRET,
+                'app_id' => KEYS::$FB_API_ID,
+                'app_secret' => KEYS::$FB_API_SECRET,
                 'default_graph_version' => 'v2.10',
-                'default_access_token' => KEYS::FB_API_TOKEN, // optional
+                'default_access_token' => KEYS::$FB_API_TOKEN, // optional
             ]);
         }
         return self::$_fb;
@@ -55,7 +55,7 @@ class FacebookExplorer
         try {
             $response = self::fb()->get(
                 "/$pageIdentifier?metadata=1&fields=metadata{type},id,name,about,description_html,display_subtext,general_info,cover,featured_video,picture.type(large),category,category_list,location,phone,emails,link,hours",
-                KEYS::FB_API_TOKEN
+                KEYS::$FB_API_TOKEN
             );
         } catch(FacebookResponseException $e) {
             // When Graph returns an error
@@ -81,7 +81,7 @@ class FacebookExplorer
         try {
             $response = self::fb()->get(
                 "/$pageIdentifier/feed?fields=$fields",
-                KEYS::FB_API_TOKEN
+                KEYS::$FB_API_TOKEN
             );
         } catch(FacebookResponseException $e) {
             // When Graph returns an error
@@ -107,7 +107,7 @@ class FacebookExplorer
         try {
             $response = self::fb()->get(
                 "/$pageIdentifier/events",
-                KEYS::FB_API_TOKEN
+                KEYS::$FB_API_TOKEN
             );
         } catch(FacebookResponseException $e) {
             // When Graph returns an error
@@ -130,7 +130,7 @@ class FacebookExplorer
         try {
             $response = self::fb()->get(
                 "/$postId?metadata=1&fields=metadata{type},id,type,name,link,message,picture,attachments,full_picture,created_time",
-                KEYS::FB_API_TOKEN
+                KEYS::$FB_API_TOKEN
             );
         } catch(FacebookResponseException $e) {
             // When Graph returns an error
