@@ -4,7 +4,7 @@
  */
 
 use Classiq\Models\SocialFeed;
-
+cq()->configPreventDbNotifications = true;
 /** @var Socialfeed[] $feeds */
 $feeds=db()->find("socialfeed","ORDER BY date_modified ASC"); //les plus vieux en premier
 foreach ($feeds as $feed){
@@ -12,6 +12,9 @@ foreach ($feeds as $feed){
         $r=$feed->updateFromSocialApi();
         foreach ($r->errors as $err){
             echo $err."<br>";
+        }
+        if(!$r->errors){
+            echo $feed->name." mis à jour<br>";
         }
     }
 }
