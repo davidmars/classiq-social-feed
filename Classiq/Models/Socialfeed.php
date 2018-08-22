@@ -88,7 +88,7 @@ class Socialfeed extends Classiqmodel
                     if($posts){
                         $this->apifeed=json_encode($posts,JSON_PRETTY_PRINT);
                         foreach ($posts as $p){
-                            $beanPost=SocialPost::createFromFbData($p,$this->unbox());
+                            $beanPost=Socialpost::createFromFbData($p,$this->unbox());
                         }
                     }
                 } catch (FacebookResponseException $e) {
