@@ -23,7 +23,7 @@ use DateTime;
  *
  *
  */
-class SocialPost extends Classiqmodel
+class Socialpost extends Classiqmodel
 {
     static $icon="cq-money-euro";
 
