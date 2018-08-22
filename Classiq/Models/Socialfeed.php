@@ -20,7 +20,7 @@ use Pov\System\ApiResponse;
  *
  *
  */
-class SocialFeed extends Classiqmodel
+class Socialfeed extends Classiqmodel
 {
     static $icon="cq-money-euro";
 
