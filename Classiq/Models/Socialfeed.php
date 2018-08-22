@@ -7,7 +7,7 @@ use Facebook\Exceptions\FacebookSDKException;
 use Pov\System\ApiResponse;
 
 /**
- * Class SocialFeed
+ * Class Socialfeed
  *
  * @package Classiq\Models
  *
