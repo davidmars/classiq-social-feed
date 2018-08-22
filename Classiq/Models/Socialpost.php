@@ -8,7 +8,7 @@ use ClassiqSocialFeed\FacebookExplorer;
 use DateTime;
 
 /**
- * Class SocialPost
+ * Class Socialpost
  *
  * @package Classiq\Models
  *
