@@ -68,6 +68,11 @@ class Socialpost extends Classiqmodel
         if(isset($data["link"])){
             return $data["link"];
         }
+        if( isset($data["id"]) &&  isset($data["type"]) ){
+            if($data["type"]==="status"){
+                return "https://www.facebook.com/".$data["id"];
+            }
+        }
         return "";
     }
 
