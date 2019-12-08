@@ -76,7 +76,7 @@ class FacebookExplorer
      * @throws FacebookResponseException
      * @throws \Facebook\Exceptions\FacebookSDKException
      */
-    public static function importPosts($pageIdentifier, $fields="id,type,name,link,message,picture,attachments,full_picture,created_time&orderby=created_time"){
+    public static function importPosts($pageIdentifier, $fields="id,message,picture,attachments,full_picture,created_time&orderby=created_time"){
         /** @var SocialFeed $bean */
         try {
             $response = self::fb()->get(
